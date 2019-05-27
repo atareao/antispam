@@ -41,7 +41,7 @@ try
 		$members = json_decode(file_get_contents("members.json"), true);
 		$user_id = $request->user_id;
 		$name = $request->name;
-		if(in_array($user_id, array_keys($members)) && $members[$user_id]['nature'] != 'bot')
+		if(in_array($user_id, array_keys($members)) && $members[$user_id]['nature'] != 'humane')
 		{
 			$members[$user_id]['nature'] = 'bot';
 	        	file_put_contents('members.json', json_encode($members));
